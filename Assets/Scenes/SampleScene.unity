@@ -641,7 +641,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _bulletSpawnPoint: {fileID: 1427068221}
-  _bulletPrefab: {fileID: 5420019979586575819, guid: ae43ed81a732b2e4a914417042b18a8a, type: 3}
+  _projectilePool: {fileID: 11400000, guid: 61e1c0094bebf7542895026342f5c25f, type: 2}
   _shootCooldown: 0.1
 --- !u!212 &2044472911
 SpriteRenderer:

@@ -7,7 +7,7 @@ using UnityEngine;
 public class Gun : MonoBehaviour
 {
     [SerializeField] private Transform _bulletSpawnPoint;
-    [SerializeField] private GameObject _bulletPrefab;
+    [SerializeField] private Pool _projectilePool;
     [SerializeField] private float _shootCooldown;
 
     private float _lastShotTime;
@@ -30,7 +30,10 @@ public class Gun : MonoBehaviour
 
     private void shoot()
     {
-        Instantiate(_bulletPrefab, _bulletSpawnPoint.position, transform.rotation);
+        Poolable bullet = _projectilePool.GetElement();
+        bullet.gameObject.SetActive(true);
+        bullet.transform.position = _bulletSpawnPoint.position;
+        bullet.transform.rotation = transform.rotation;
 
         _lastShotTime = Time.time;
     }
